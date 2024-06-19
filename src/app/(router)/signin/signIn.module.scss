@@ -1,0 +1,80 @@
+@import "../../../styles/variables";
+
+.signIn {
+  padding-inline: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 30px;
+  h2 {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    color: $primary-color;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    input {
+      height: 40px;
+      background: #e9ebedd5;
+      padding: 5px;
+      border-radius: 5px;
+      width: 100%;
+      font-weight: bold;
+      color: #060606;
+      outline: none;
+      font-size: 17px;
+
+      &:focus {
+        outline: green;
+      }
+    }
+    button {
+      max-width: 300px;
+      width: 100%;
+      margin: auto;
+      background: $primary-color;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 17px;
+      color: $white-color;
+      cursor: pointer;
+      outline: none;
+      transition: opacity 0.2s ease-out;
+      &:hover {
+        // opacity: 0.8;
+      }
+    }
+    a {
+      display: flex;
+      align-self: flex-end;
+      text-decoration: none;
+      color: $blue-link-color;
+      font-size: 13px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    .linkSignUp {
+      margin-block: 10px;
+      color: $grey-color;
+      display: flex;
+      align-self: center;
+      font-size: 16px;
+      gap: 5px;
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
