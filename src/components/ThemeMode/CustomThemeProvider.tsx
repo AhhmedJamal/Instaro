@@ -39,9 +39,9 @@ const CustomThemeProvider = ({ children }: CustomThemeProviderProps) => {
 
   const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(
-      localStorage.getItem("darkMode") === "true" ? darkMode() : lightMode()
-    );
+    // dispatch(
+    //   localStorage.getItem("darkMode") === "true" ? darkMode() : lightMode()
+    // );
   }, [dispatch]);
   return (
     <ThemeProvider theme={!dark ? darkTheme : lightTheme}>
