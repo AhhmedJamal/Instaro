@@ -1,12 +1,15 @@
 // slices/counterSlice.ts
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface ThemeState {
+  dark: boolean;
+}
+const initialState: ThemeState = {
   dark: true,
 };
 
 export const themeSlice = createSlice({
-  name: "darkMode",
+  name: "theme",
   initialState,
   reducers: {
     darkMode: (state) => {

@@ -36,12 +36,13 @@ interface CustomThemeProviderProps {
 
 const CustomThemeProvider = ({ children }: CustomThemeProviderProps) => {
   const { dark } = useSelector((state: RootState) => state.dark);
-
   const dispatch = useAppDispatch();
+
   useEffect(() => {
-    // dispatch(
-    //   localStorage.getItem("darkMode") === "true" ? darkMode() : lightMode()
-    // );
+    const modeInLocalStorage = localStorage.getItem("darkMode");
+    if (modeInLocalStorage !== undefined) {
+      dispatch(modeInLocalStorage === "true" ? darkMode() : lightMode());
+    }
   }, [dispatch]);
   return (
     <ThemeProvider theme={!dark ? darkTheme : lightTheme}>

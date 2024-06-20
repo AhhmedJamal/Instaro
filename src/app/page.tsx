@@ -4,15 +4,29 @@ import { Button, Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { darkMode, lightMode } from "../store/theme/themeSlice";
 import { useAppDispatch } from "@/store/store";
-export default function Home() {
-  const [mode, setMode] = useState<boolean>(false);
-  // localStorage.getItem("darkMode") === "true" ? true : false
+
+const Home: React.FC = () => {
+  const [mode, setMode] = useState<boolean | null>(null);
   const dispatch = useAppDispatch();
-  useEffect(() => {}, []);
+
+  useEffect(() => {
+    const storedMode = localStorage.getItem("darkMode");
+    if (storedMode !== null) {
+      setMode(storedMode === "true");
+    } else {
+      setMode(false); 
+    }
+  }, []);
+
   const handleClick = () => {
-    setMode((pre) => !pre);
-    mode ? dispatch(darkMode()) : dispatch(lightMode());
+    if (mode !== null) {
+      const newMode = !mode;
+      setMode(newMode);
+      localStorage.setItem("darkMode", newMode.toString());
+      newMode ? dispatch(darkMode()) : dispatch(lightMode());
+    }
   };
+
   return (
     <Container maxWidth="sm">
       <main>
@@ -23,4 +37,6 @@ export default function Home() {
       </main>
     </Container>
   );
-}
+};
+
+export default Home;

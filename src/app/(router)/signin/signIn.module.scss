@@ -1,4 +1,5 @@
 @import "../../../styles/variables";
+@import "../../../styles/mixin";
 
 .signIn {
   padding-inline: 20px;
@@ -52,19 +53,54 @@
       outline: none;
       transition: opacity 0.2s ease-out;
       &:hover {
-        // opacity: 0.8;
-      }
-    }
-    a {
-      display: flex;
-      align-self: flex-end;
-      text-decoration: none;
-      color: $blue-link-color;
-      font-size: 13px;
-      &:hover {
         opacity: 0.8;
       }
     }
+    .divLinkAndCondition {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column-reverse;
+      @include media($small-screen) {
+        flex-direction: row-reverse;
+        padding-inline: 15px;
+      }
+      align-items: center;
+      gap: 20px;
+      a {
+        font-size: 14px;
+        color: $blue-link-color;
+        text-decoration: none;
+        align-self: flex-end;
+        @include media($small-screen) {
+          align-self: center;
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      ul {
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        li {
+          font-size: 11px;
+          font-weight: normal;
+          text-decoration: none;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+      .red {
+        color: $red-color;
+      }
+      .green {
+        color: $green-color;
+      }
+    }
+
     .linkSignUp {
       margin-block: 10px;
       color: $grey-color;
@@ -74,6 +110,8 @@
       gap: 5px;
       a {
         font-size: 14px;
+        color: $blue-link-color;
+        text-decoration: none;
       }
     }
   }
