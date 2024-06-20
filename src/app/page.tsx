@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 import { darkMode, lightMode } from "../store/theme/themeSlice";
 import { useAppDispatch } from "@/store/store";
 export default function Home() {
-  const [mode, setMode] = useState(
-    localStorage.getItem("darkMode") === "true" ? true : false
-  );
+  const [mode, setMode] = useState();
+  // localStorage.getItem("darkMode") === "true" ? true : false
   const dispatch = useAppDispatch();
   useEffect(() => {}, []);
   const handleClick = () => {
