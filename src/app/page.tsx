@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     if (storedMode !== null) {
       setMode(storedMode === "true");
     } else {
-      setMode(false); 
+      setMode(false);
     }
   }, []);
 

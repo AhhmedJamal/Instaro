@@ -8,24 +8,30 @@ import { darkMode, lightMode } from "@/store/theme/themeSlice";
 
 const lightTheme = createTheme({
   palette: {
-    primary: {
-      main: "#4423d5", // Replace this with your desired primary color
-    },
+    // primary: {
+    //   main: "#4423d5", // Replace this with your desired primary color
+    // },
     mode: "light",
     background: {
-      default: "#f1f1f1", // Dark background color
+      default: "#f1f1f1",
+    },
+    text: {
+      primary: "#000000",
     },
   },
 });
 const darkTheme = createTheme({
   palette: {
-    primary: {
-      main: "#4423d5", // Replace this with your desired primary color
-    },
+    // primary: {
+    //   main: "#4423d5", // Replace this with your desired primary color
+    // },
     mode: "dark",
 
     background: {
-      default: "#262626", // Dark background color
+      default: "#121212",
+    },
+    text: {
+      primary: "#ffffff",
     },
   },
 });

@@ -4,53 +4,56 @@
 .signIn {
   padding-inline: 20px;
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 50px;
   padding-bottom: 30px;
+
   h2 {
     font-family: "Pacifico", cursive;
     font-weight: 400;
     font-style: normal;
-    font-size: 70px;
-    color: $primary-color;
+    font-size: 60px;
     background-clip: text;
     -webkit-background-clip: text;
+    @include media($small-screen) {
+      font-size: 75px;
+    }
   }
   .form {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 90%;
+    width: 100%;
     input {
-      height: 40px;
-      background: #e9ebedd5;
-      padding: 5px;
+      height: 45px;
+      background: #e9ebed13;
+      padding-inline: 10px;
       border-radius: 5px;
       width: 100%;
       font-weight: bold;
-      color: #060606;
       outline: none;
       font-size: 17px;
-
-      &:focus {
-        outline: green;
-      }
+      outline: none;
+      border: 1px solid $grey-color_half;
     }
     button {
       max-width: 300px;
       width: 100%;
+      height: 40px;
       margin: auto;
       background: $primary-color;
       border: none;
       border-radius: 5px;
-      padding: 10px 20px;
       font-size: 17px;
+      font-weight: bold;
       color: $white-color;
       cursor: pointer;
       outline: none;
+      text-transform: capitalize;
       transition: opacity 0.2s ease-out;
       &:hover {
         opacity: 0.8;
@@ -61,14 +64,14 @@
       justify-content: space-between;
       align-items: center;
       flex-direction: column-reverse;
+      padding-inline: 15px;
       @include media($small-screen) {
         flex-direction: row-reverse;
-        padding-inline: 15px;
       }
       align-items: center;
       gap: 20px;
       a {
-        font-size: 14px;
+        font-size: 13px;
         color: $blue-link-color;
         text-decoration: none;
         align-self: flex-end;
@@ -93,23 +96,48 @@
           }
         }
       }
-      .red {
-        color: $red-color;
-      }
+
       .green {
         color: $green-color;
+        text-decoration: line-through;
+        transition: all 0.5s ease-out;
+        animation: hideElement 1s forwards;
+      }
+      @keyframes hideElement {
+        0% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          display: none;
+        }
       }
     }
-
+    .or {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        width: 40%;
+        height: 1px;
+        background-color: $grey-color_half;
+      }
+      div {
+        color: $grey-color;
+        font-size: 13px;
+      }
+    }
     .linkSignUp {
       margin-block: 10px;
       color: $grey-color;
       display: flex;
       align-self: center;
-      font-size: 16px;
+      font-size: 14px;
       gap: 5px;
       a {
-        font-size: 14px;
         color: $blue-link-color;
         text-decoration: none;
       }
